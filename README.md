@@ -8,12 +8,13 @@ Welcome to the **Backend Mastery Hub** — your structured learning guide to bec
 
 This repository includes curated roadmaps and topic breakdowns across key backend development areas:
 
-- **Python Core** (backend-focused essentials)
-- **Web Frameworks** (FastAPI / Django)
-- **System Design** (scalable backend architecture)
-- **SQL Mastery** (from basics to query optimization)
 - **Data Structures & Algorithms** (interview-focused)
-- **Rust for Backend** (modern, fast, and safe backend programming)
+- **Python Core** (backend-focused essentials)
+- **Python Web Frameworks** (FastAPI / Django)
+- **Rust Core** (backend-focused essentials)
+- **Rust Web Frameworks** (Actix / Rocket)
+- **SQL** (from basics to query optimization)
+- **System Design** (scalable backend architecture)
 
 Each section is organized into **Beginner**, **Intermediate**, and **Advanced** levels with progress markers `[✅]/[❌]`.
 
