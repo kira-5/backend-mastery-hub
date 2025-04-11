@@ -3,6 +3,8 @@
 
 ### 🟢 Beginner
 
+* [✅] **Rust**  
+
 * [✅] **Variables, Mutability, Constants & Type Annotations, Naming Conventions**  
     - variables, mutability, constants, type annotations, naming conventions
     
