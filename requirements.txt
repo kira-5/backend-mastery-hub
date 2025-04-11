@@ -47,8 +47,8 @@ async-lru                       # LRU cache for async functions
 
 
 # Multithreading and Concurrency
-concurrent-futures-extra        # Extensions for concurrent.futures
-threading2                      # Enhanced threading module
+# concurrent-futures-extra        # Extensions for concurrent.futures
+# threading2                      # Enhanced threading module
 multiprocessing-logging         # Logging for multiprocessing applications
 joblib                          # Parallel computing made easy
 ray                             # Distributed computing framework
@@ -70,7 +70,7 @@ pathlib                         # Path handling
 
 
 # Email Handling
-smtplib                         # SMTP client for sending emails
+# smtplib                         # SMTP client for sending emails
 
 
 # Data Processing & Analysis
