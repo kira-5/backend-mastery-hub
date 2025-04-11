@@ -24,13 +24,13 @@ Each section is organized into **Beginner**, **Intermediate**, and **Advanced** 
 
 ```bash
 backend-mastery-hub/
-|-- data-structures-algorithms/
-|-- python/
-|-- python-web-frameworks/
-|-- rust/
-|-- rust-web-frameworks/
-|-- sql/
-|-- system-design/
+|-- Data Structures & Algorithm/
+|-- Python Core/
+|-- Python Web Frameworks/
+|-- Rust Core/
+|-- Rust Web Frameworks/
+|-- SQL/
+|-- System Design/
 ```
 
 ---
