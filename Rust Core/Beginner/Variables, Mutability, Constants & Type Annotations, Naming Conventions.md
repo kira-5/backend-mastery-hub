@@ -1,0 +1,272 @@
+# Variables, Mutability, Constants & Type Annotations, Naming Conventions
+
+## Variables
+
+-   `let` is used to declare a variable.
+-   `let` is immutable by default.
+-   `let` is block scoped.
+-   `let` is shadowable.
+-   `let` is not hoisted.
+-   You must explicitly declare mutability.
+
+```rust
+fn main() {
+    let x = 5;
+    println!("x: {}", x);
+    
+    // x = 6; // ❌ Error: cannot assign twice to immutable variable
+    
+    // Block scope example
+    {
+        let y = 10;
+        println!("Inner y: {}", y);
+    }
+    // println!("Outer y: {}", y); // ❌ Error: y is not in scope here
+}
+```
+
+### Variable Shadowing
+
+-   You can declare a new variable with the same name as a previous variable
+-   This is called "shadowing" and allows you to reuse variable names
+-   Each shadowing creates a new variable, it doesn't modify the original
+
+```rust
+fn main() {
+    let x = 5;
+    println!("Initial x: {}", x);
+    
+    let x = x + 1; // x is now 6
+    println!("After first shadowing: {}", x);
+    
+    let x = x * 2; // x is now 12
+    println!("After second shadowing: {}", x);
+    
+    // Shadowing in different scopes
+    {
+        let x = "inner value"; // This shadows the outer x only in this scope
+        println!("Inner scope x: {}", x);
+    }
+    println!("Outer scope x is still: {}", x); // x is still 12 here
+}
+```
+
+-   Shadowing lets you change the type of a variable while reusing the same name:
+
+```rust
+fn main() {
+    let spaces = "   ";
+    println!("spaces is a string with length: {}", spaces.len());
+    
+    let spaces = spaces.len(); // spaces is now a number (3)
+    println!("spaces is now a number: {}", spaces);
+    
+    // This wouldn't work with mut:
+    // let mut spaces = "   ";
+    // spaces = spaces.len(); // ❌ Error: mismatched types
+}
+```
+
+## Mutability
+
+-   `mut` is used to make a variable mutable.
+-   Mutable variables can have their value changed but not their type.
+
+```rust
+fn main() {
+    let mut x = 5;
+    println!("Initial x: {}", x);
+    
+    x = 6; // ✅ Works because x is mutable
+    println!("Modified x: {}", x);
+    
+    // x = "hello"; // ❌ Error: mismatched types, even with mut
+}
+```
+
+### Use Cases for Mutability
+
+-   When implementing algorithms that require in-place updates
+-   When you need to improve performance by avoiding copying large data structures
+-   When working with user input that changes over time
+-   For counters and accumulators in loops
+
+```rust
+fn main() {
+    // Counter example
+    let mut counter = 0;
+    while counter < 5 {
+        println!("Counter: {}", counter);
+        counter += 1;
+    }
+    
+    // User input example
+    let mut input = String::new();
+    println!("Enter your name:");
+    std::io::stdin().read_line(&mut input).expect("Failed to read line");
+    println!("Hello, {}!", input.trim());
+}
+```
+
+## Constants
+
+-   `const` is used to declare a constant.
+-   Constants are always immutable (no `mut` keyword allowed).
+-   Constants must be annotated with their type.
+-   Constants can be declared in any scope, including the global scope.
+-   Constants can only be set to a constant expression, not the result of a function call or any value computed at runtime.
+-   By convention, constants are named using SCREAMING_SNAKE_CASE.
+
+```rust
+// Global constants
+const PI: f64 = 3.14159;
+const MAX_USERS: u32 = 100_000;
+
+fn main() {
+    // Local constant
+    const SECONDS_IN_HOUR: u32 = 60 * 60;
+    
+    println!("Pi: {}", PI);
+    println!("Max users: {}", MAX_USERS);
+    println!("Seconds in an hour: {}", SECONDS_IN_HOUR);
+    
+    // const RANDOM: u32 = rand::random(); // ❌ Error: calls in constants are limited
+}
+```
+
+### Use Cases for Constants
+
+-   When you need a value that is known at compile time and unlikely to change.
+-   When you want to ensure that a value is not changed accidentally.
+-   Constants are valid for the entire program runtime within their scope. They're useful for values that multiple parts of your program might need to know about.
+-   For configuration values that should be used throughout your program
+-   For mathematical constants
+-   For defining limits, boundaries, or thresholds
+-   For error codes or status codes
+
+```rust
+// Application configuration
+const MAX_CONNECTIONS: u32 = 10_000;
+const DATABASE_URL: &str = "postgres://localhost:5432/myapp";
+
+// HTTP status codes
+const HTTP_OK: u16 = 200;
+const HTTP_NOT_FOUND: u16 = 404;
+const HTTP_SERVER_ERROR: u16 = 500;
+
+// Mathematical constants
+const GOLDEN_RATIO: f64 = 1.618033988749895;
+const EULER_NUMBER: f64 = 2.718281828459045;
+
+fn main() {
+    // Using constants for configuration
+    println!("App will allow up to {} connections", MAX_CONNECTIONS);
+    
+    // Using constants for business logic
+    let user_count = 8_500;
+    if user_count < MAX_CONNECTIONS {
+        println!("System load: {:.1}%", (user_count as f64 / MAX_CONNECTIONS as f64) * 100.0);
+    }
+}
+```
+
+## Type Annotations
+
+-   You can explicitly specify a variable's type using a colon followed by the type.
+-   Type annotations are often optional due to Rust's type inference, but they improve code clarity.
+-   Type annotations are required in certain situations where the compiler cannot infer the type.
+
+```rust
+fn main() {
+    // Basic type annotations
+    let age: u32 = 30;
+    let pi: f64 = 3.14159;
+    let is_active: bool = true;
+    let name: &str = "Alice";
+    
+    // Type annotations with complex types
+    let numbers: [i32; 5] = [1, 2, 3, 4, 5];
+    let coordinates: (f64, f64) = (41.40338, 2.17403);
+    
+    // When type inference needs help
+    let parsed_number: u32 = "42".parse().expect("Not a number!");
+    
+    // Empty collections need type annotations
+    let empty_vector: Vec<i32> = Vec::new();
+    let empty_hash_map: std::collections::HashMap<String, i32> = std::collections::HashMap::new();
+}
+```
+
+## Naming Conventions
+
+Rust has several standard naming conventions:
+
+-   Variables and function names use `snake_case` (lowercase with underscores)
+-   Constants use `SCREAMING_SNAKE_CASE` (uppercase with underscores)
+-   Types, traits, and enums use `PascalCase` (each word capitalized with no separators)
+-   Modules use `snake_case`
+-   Macros often use `snake_case!` with an exclamation mark
+
+```rust
+fn main() {
+    // Variable naming (snake_case)
+    let user_name = "Alice";
+    let phone_number = "555-1234";
+    
+    // Constants (SCREAMING_SNAKE_CASE)
+    const MAX_CONNECTIONS: u32 = 100;
+    
+    // Function naming (snake_case)
+    fn calculate_total(price: f64, tax_rate: f64) -> f64 {
+        price * (1.0 + tax_rate)
+    }
+    
+    // Using types (PascalCase)
+    struct UserProfile {
+        name: String,
+        age: u32,
+    }
+    
+    enum ConnectionState {
+        Connected,
+        Disconnected,
+        Connecting,
+    }
+    
+    // Using a macro (snake_case!)
+    println!("Hello, {}!", user_name);
+}
+```
+
+### Naming Best Practices
+
+-   Choose descriptive names that clearly convey purpose
+-   Prefer longer, clearer names over short, cryptic ones
+-   Use domain-specific terminology when appropriate
+-   Be consistent with the standard library's naming patterns
+-   For boolean variables, use prefixes like `is_`, `has_`, or `should_`
+-   For functions that return boolean values, use verbs like `is_empty()` or `has_value()`
+
+# Differences between Variables and Constants
+
+| Feature | Variable | Constant |
+|---------|----------|----------|
+| Declaration | `let` or `let mut` | `const` |
+| Naming convention | snake_case | SCREAMING_SNAKE_CASE |
+| Mutability | Immutable by default, can be made mutable with `mut` | Always immutable |
+| Type annotation | Optional (inferred) | Required |
+| Shadowing | Can be shadowed | Cannot be shadowed |
+| Value assignment | Can be assigned values computed at runtime | Can only be assigned constant expressions |
+| Scope | Scoped to the block where they're declared | Available for the entire program runtime within their scope |
+| Compile-time evaluation | Not required | Required |
+
+## Best Practices
+
+-   Use immutable variables by default for safer code
+-   Only use `mut` when you need to change a variable's value
+-   Use constants for values that are used throughout your program and won't change
+-   Use shadowing to transform a value while keeping the same name
+-   Use descriptive names for variables and constants
+-   Add type annotations when they improve code clarity, especially for function signatures
+-   Use constants instead of "magic numbers" in your code
+-   Consider using `const` for values that are conceptually constants, even if they're only used once

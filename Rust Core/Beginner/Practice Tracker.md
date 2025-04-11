@@ -3,7 +3,7 @@
 
 ### 🟢 Beginner
 
-* [❌] **Variables, Mutability & Constants**  
+* [❌] **Variables, Mutability, Constants & Type Annotations, Naming Conventions**  
     – `let`, `mut`, `const`
     
 * [❌] **Data Types**  
