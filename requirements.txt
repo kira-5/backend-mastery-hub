@@ -1,0 +1,135 @@
+# Linting and Formatting
+flake8                          # Style guide enforcement
+autopep8                        # Automatic PEP 8 code style enforcement
+pylint                          # Source code analyzer
+black                           # Code formatter
+isort                           # Sort imports
+pre-commit                      # Git hook manager
+mypy                            # Static type checker for Python
+types-pytz                      # Type hints for pytz
+ipython                         # Interactive Python shell
+ipykernel                       # IPython kernel for Jupyter
+
+
+# Environment management
+python-dotenv                   # For loading environment variables from .env files
+Dynaconf                        # Configuration management
+
+
+# Project management
+pip-tools                       # For managing Python package requirements
+
+
+# Time management
+pytz                            # Time zone handling
+
+
+# HTTP requests
+requests                        # For making HTTP requests
+httpx                           # Async HTTP client for testing APIs
+aiohttp                         # Asynchronous HTTP client/server
+
+
+# Web framework
+fastapi[all]                    # Main FastAPI framework with CORS middleware and other optional packages
+uvicorn                         # ASGI server for running FastAPI applications
+
+
+# Data Validation & Serialization
+pydantic                        # Data validation and settings management
+pyyaml                          # YAML parser and emitter
+jinja2                          # Template engine
+
+
+# Asynchronous Libraries
+asyncio                         # Asynchronous I/O framework
+async-lru                       # LRU cache for async functions
+
+
+# Multithreading and Concurrency
+concurrent-futures-extra        # Extensions for concurrent.futures
+threading2                      # Enhanced threading module
+multiprocessing-logging         # Logging for multiprocessing applications
+joblib                          # Parallel computing made easy
+ray                             # Distributed computing framework
+distributed                     # Distributed scheduler for Dask
+trio                            # Async concurrency library (alternative to asyncio)
+anyio                           # Asynchronous concurrency framework
+
+
+# Task Processing
+celery                          # Asynchronous task queue
+
+
+# Excel Handling
+openpyxl                        # Excel file handling
+
+
+# File Handling
+pathlib                         # Path handling
+
+
+# Email Handling
+smtplib                         # SMTP client for sending emails
+
+
+# Data Processing & Analysis
+numpy                           # Numerical computations
+pandas                          # Data manipulation and analysis
+dask                            # Parallel computing library
+joblib                          # Parallel computing made easy
+ray                             # Distributed computing framework
+distributed                     # Distributed scheduler for Dask
+
+
+# Data visualization
+matplotlib                      # Data visualization library
+
+
+# Machine Learning
+scikit-learn                    # For machine learning tasks
+
+
+# Database & Storage
+sqlalchemy                      # SQL toolkit and Object-Relational Mapping (ORM)
+alembic                         # Database migration tool for SQLAlchemy
+databases                       # Async database support for SQLAlchemy
+# PostgreSQL
+asyncpg                         # PostgreSQL database adapter for asyncio
+aiopg                           # Asynchronous PostgreSQL driver based on psycopg2
+psycopg2-binary                 # PostgreSQL adapter (synchronous)
+# MongoDB
+pymongo                         # MongoDB driver
+motor                           # Async MongoDB driver
+# Redis
+redis                           # Redis client for caching or session storage
+
+
+# Authentication and Authorization
+passlib                         # Password hashing library
+python-jose                     # For handling JWT tokens
+python-multipart                # For handling form data
+bcrypt                          # Password hashing library
+cryptography                    # Cryptographic recipes and primitives
+
+
+# Testing
+pytest                          # Testing framework
+pytest-asyncio                  # Asyncio support for pytest
+
+
+# Documentation generation
+sphinx                          # Documentation generator for Python projects
+sphinx-autodoc-typehints        # Autodoc with type hints support for Sphinx
+
+
+# Monitoring and Logging
+prometheus-client               # Prometheus monitoring client
+sentry-sdk                      # Error tracking
+structlog                       # Structured logging
+loguru                          # Simplified logging
+
+
+# CLI & User Interface
+typer                           # CLI builder based on type hints
+tqdm                            # Progress bar

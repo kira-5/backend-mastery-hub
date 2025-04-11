@@ -1,0 +1,35 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Python: Current File",
+			"type": "debugpy",
+			"request": "launch",
+			"program": "${file}",
+			"console": "integratedTerminal",
+			"cwd": "${workspaceFolder}/",
+			"justMyCode": false,
+			"preLaunchTask": "Start Backend",
+			"env": {
+				"MY_ENV_VAR": "value"  // Example environment variable
+			},
+			// "pythonPath": "${workspaceFolder}/venv/bin/python"  // Adjust according to your setup
+		},
+		{
+			"name": "Python: FastAPI",
+			"type": "debugpy",
+			"request": "launch",
+			"module": "uvicorn",
+			"args": ["main:app", "--reload", "--port", "8000"],
+			"cwd": "${workspaceFolder}/",
+			"justMyCode": true,
+			"preLaunchTask": "Start Backend",
+			"env": {
+				"MY_ENV_VAR": "value"  // Example environment variable
+			},
+			// "pythonPath": "${workspaceFolder}/venv/bin/python",  // Adjust according to your setup
+			"console": "integratedTerminal" // Or "externalTerminal" based on preference
+		}
+	],
+	"postDebugTask": "Clean Up Task" // Example of a cleanup task after debugging
+}
