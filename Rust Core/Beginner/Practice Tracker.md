@@ -4,19 +4,19 @@
 ### 🟢 Beginner
 
 * [✅] **Variables, Mutability, Constants & Type Annotations, Naming Conventions**  
-    – variables, mutability, constants, type annotations, naming conventions
+    - variables, mutability, constants, type annotations, naming conventions
     
 * [❌] **Data Types**  
-    – scalar, compound types, Heap-based / Standard Library Types
+    - scalar, compound types, Heap-based / Standard Library Types
     
 * [❌] **Control Flow**  
-    – `if`, `match`, `for`, `while`, `loop`
+    - `if`, `match`, `for`, `while`, `loop`
     
-* [❌] **Functions & Ownership**  
-    – `fn`, parameters, return types, ownership model
+* [❌] **Functions**  
+    - `fn`, parameters, return types, expressions vsstatements, closures, recursion, function pointers
     
-* [❌] **References & Borrowing**  
-    – `&T`, `&mut T`, borrowing rules
+* [❌] **Ownership, References & Borrowing**  
+    - Ownership, References, Borrowing, Slices
     
 * [❌] **Structs & Enums**  
-    – Defining and using `struct` & `enum`, method implementations
+    - Defining and using `struct` & `enum`, method implementations
