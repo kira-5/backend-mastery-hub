@@ -18,5 +18,5 @@
 * [✅] **Ownership, References & Borrowing**  
     - Ownership, References, Borrowing
     
-* [❌] **Structs & Enums**  
+* [✅] **Structs & Enums**  
     - Defining and using `struct` & `enum`, method implementations
