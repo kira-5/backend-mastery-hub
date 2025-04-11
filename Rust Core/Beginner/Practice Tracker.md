@@ -4,12 +4,12 @@
 ### 🟢 Beginner
 
 * [✅] **Variables, Mutability, Constants & Type Annotations, Naming Conventions**  
-    – `let`, `mut`, `const`
+    – variables, mutability, constants, type annotations, naming conventions
     
 * [❌] **Data Types**  
-    – scalar vs compound types
+    – scalar, compound types, Heap-based / Standard Library Types
     
-* [❌] **Control Flow (if, match, loops)**  
+* [❌] **Control Flow**  
     – `if`, `match`, `for`, `while`, `loop`
     
 * [❌] **Functions & Ownership**  
