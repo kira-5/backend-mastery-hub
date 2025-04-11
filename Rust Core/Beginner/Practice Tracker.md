@@ -3,8 +3,11 @@
 
 ### 🟢 Beginner
 
-* [❌] **Variables, Data Types & Mutability**  
-    – `let`, `mut`, `const`, scalar vs compound types
+* [❌] **Variables, Mutability & Constants**  
+    – `let`, `mut`, `const`
+    
+* [❌] **Data Types**  
+    – scalar vs compound types
     
 * [❌] **Control Flow (if, match, loops)**  
     – `if`, `match`, `for`, `while`, `loop`
