@@ -1,39 +1,20 @@
 ## ✨ Topic Name ✨
 
-
 ### 🟡 Intermediate
 
-* [❌] **OOP (Classes, Inheritance, Dunder methods)**
-    
-    * `__init__`, `__str__`, `__repr__`, etc.
-        
-    * `super()`, `property()`
-        
-* [❌] **Iterators / Generators**
-    
-    * `iter()`, `next()`, `yield`, `StopIteration`
-        
-* [❌] **Context Managers**
-    
-    * `with` + `__enter__` / `__exit__`
-        
-    * `contextlib` & `contextmanager` decorator
-        
-* [❌] **Type Hints & Static Typing**
-    
-    * `->`, `Optional`, `Union`, `List`, `Dict`
-        
-* [❌] ****main** and Python Module Layouts**
-    
-    * `if __name__ == "__main__":`
-        
-    * `import` structure
-        
-* [❌] **Other Built-ins**
-    
-    * `reversed()`, `format()`, `round()`, `chr()`, `ord()`
-        
-    * `reduce()` (from `functools`)
-        
-    * `eval()`, `exec()` (with caution)
-        
+-   [❌] **Error Handling**
+    -   `try/except`, `finally`, `raise`
+-   [❌] **File Handling**
+    -   `open()`, `read()`, `write()`, `with`
+-   [❌] **Date & Time Handling**
+    -   `DateTime`, `Duration`, `NaiveDateTime`, `TimeZone`
+-   [❌] **Serialization & Deserialization**
+    -   `serde`, `json`, `bincode`, `toml`
+-   [❌] **Decoding & Encoding**
+    -   `base64`, `url`, `json`
+
+*   [❌] **Intermediate built-in methods**
+    -   `map()`, `filter()`, `zip()`, `enumerate()`
+    -   `all()`, `any()`, `abs()`, `round()`, `sorted()`
+    -   `reduce()` (from `functools`)
+    -   `eval()`, `exec()` (with caution)

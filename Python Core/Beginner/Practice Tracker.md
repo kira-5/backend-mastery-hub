@@ -1,41 +1,27 @@
-## ✨ Beginner ✨
+## ✨ 🟢 Beginner ✨
 
-
-### 🟢 Beginner
-
-* [❌] **Functions & Scopes**
-    
-    * `def`, return, global/local scope
-        
-    * `type()`, `isinstance()`
-        
-* [❌] **Decorators**
-    
-    * Basic decorator syntax
-        
-    * `@staticmethod`, `@classmethod`
-        
-* [❌] ***args and **kwargs**
-    
-    * Variadic arguments
-        
-* [❌] **File Handling**
-    
-    * `open()`, `read()`, `write()`, `with`
-        
-* [❌] **Exception Handling**
-    
-    * `try/except`, `finally`, `raise`
-        
-    * Built-ins: `Exception`, `ValueError`, etc.
-        
-* [❌] **Useful Built-ins**
-    
-    * `print()`, `input()`
-        
-    * `len()`, `max()`, `min()`, `sum()`
-        
-    * `map()`, `filter()`, `zip()`, `enumerate()`
-        
-    * `all()`, `any()`, `abs()`, `round()`, `sorted()`
-        
+-   [❌] **Python**
+    -   Introduction to Python programming language, its syntax, and its applications.
+-   [❌] **User Input**
+    -   Using `input()` to gather user data and how to handle it.
+-   [❌] **Variables, Constants, Literals, Naming Conventions**
+    -   Explanation of variables, constants, and literals with examples.
+    -   Best practices for naming conventions in Python.
+-   [❌] **Data Types**
+    -   Overview of data types with examples: strings, lists, dictionaries, tuples, sets, booleans, integers, floats, complex numbers, bytes, bytearrays, memoryviews, etc.
+-   [❌] **Data Type Conversion**
+    -   Examples of using `int()`, `float()`, `str()`, `list()`, `dict()`, `tuple()`, `set()`, `bool()`, `complex()`, `bytes()`, `bytearray()`, `memoryview()`, etc.
+-   [❌] **Operators**
+    -   Detailed explanation of different types of operators with examples: arithmetic, assignment, comparison, logical, bitwise, membership, identity.
+-   [❌] **Control Flow**
+    -   Explanation of control flow statements with examples: `if`, `match`, `for`, `while`, `loop`.
+-   [❌] **Functions**
+    -   Detailed explanation of defining functions using `def`, return statements, global/local scope, and using args and kwargs.
+-   [❌] **Modules & Packages**
+    -   Explanation of how to use `import`, `from ... import ...`, and the purpose of `__init__.py`, `package.py`, `__main__.py`.
+-   [❌] **Beginner built-in methods**
+    -   `print()`, `input()`
+    -   `len()`, `max()`, `min()`, `sum()`
+    -   `map()`, `filter()`, `zip()`, `enumerate()`
+    -   `all()`, `any()`, `abs()`, `round()`, `sorted()`
+    -   `reversed()`, `format()`, `chr()`, `ord()`
