@@ -3,6 +3,45 @@
 ## Threading
 
 - Rust provides powerful tools for concurrent programming through its threading model.
+- When yu create a thread, it should be create at system level i.e. native thread, not at the application level.
+- What value to pass to thread, it should be a pass by value, not pass by reference.
+- The movement you write `spawn(|| {})` is a move closure, it will start the thread and move the value to the thread.
+
+**Key Points:**
+
+- You're properly spawning threads with thread::spawn
+- You're using join() to wait for threads to complete
+- You're handling the Result from join() properly
+- You're using Duration for sleeps
+
+Main Thread        Thread 1          Thread 2
+|----------------|----------------|----------------|
+| Start          | Spawned        | Spawned        |
+| Print message  | Print 0        | Print 11       |
+| Join Thread 1  | Sleep 500ms    | Sleep 500ms    |
+| (blocks)       | Print 1        | Print 12       |
+|                | ...            | ...            |
+| Join Thread 2  | Print 9        | Print 19       |
+| (blocks)       | Complete       | Complete       |
+| Print results  |                |                |
+| Complete       |                |                |
+
+**Important Points:**
+
+1. No Data Races
+
+- Even though threads access println! simultaneously, it's thread-safe
+- Rust's ownership system prevents true data races
+
+2. Sleep Behavior
+
+- thread::sleep yields execution to other threads
+  - This is why you see interleaved output
+
+3. Join Order Matters
+
+- The main thread waits for handle1 completely before waiting for handle2
+- But both child threads are running concurrently before joining
 
 ### Basic Thread Creation
 
@@ -12,6 +51,7 @@
   fn main() {
       // Spawn a new thread
       let handle = thread::spawn(|| {
+          thread::sleep(Duration::from_secs(1));
           println!("Hello from a new thread!");
       });
 
