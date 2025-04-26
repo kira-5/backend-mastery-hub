@@ -134,9 +134,9 @@
 ### Best Practices
 
 - Prefer message passing over shared state when possible
-- Use Arc<T> for shared ownership across threads
-- Combine Mutex<T> with Arc<T> for shared mutable state
-- Consider higher-level abstractions like the rayon crate for parallel iterators
+- Use `Arc<T>` for shared ownership across threads
+- Combine `Mutex<T>` with `Arc<T>` for shared mutable state
+- Consider higher-level abstractions like the `rayon` crate for parallel iterators
 - Be mindful of thread overhead - creating thousands of threads is usually not efficient
   
 ## Error Handling
