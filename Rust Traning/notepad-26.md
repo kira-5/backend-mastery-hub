@@ -82,11 +82,18 @@ Main Thread        Thread 1          Thread 2
   }
 ```
 
+**Problem with Threads:**
+
+- How to maintian locking mechanism?
+- When to use RC(Reference count) or ARC(Atomic reference count)?
+
 ### Shared-State Concurrency
 
 - Rust's ownership system helps prevent data races. For shared mutable state, you need synchronization:
   
 **Using Mutex (Mutual Exclusion)**
+
+- variable is maintian in multiple threads.
 
 ```rust
   use std::sync::{Arc, Mutex};
