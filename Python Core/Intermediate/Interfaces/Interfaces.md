@@ -8,6 +8,8 @@ An interface is a concept used to define a blueprint for a class, specifying a s
 
 ### 1. Abstract Base Classes (ABCs)
 
+**Characteristics:**
+
 - Strict enforcement at compile-time
 - Raises TypeError if abstract methods aren't implemented
 - Less flexible but more structured
@@ -43,6 +45,8 @@ print(circle.perimeter()) # Output: 31.4
 ```
 
 ### 2. Informal Duck Typing
+
+**Characteristics:**
 
 - Loose enforcement at runtime
 - Raises NotImplementedError if methods aren't implemented
@@ -133,3 +137,25 @@ for shape in shapes:
 - Use ABCs when you need strict enforcement and clear contracts
 - Use duck typing when you need more flexibility
 - Consider your project's requirements when choosing between the two approaches
+
+## Design Patterns
+
+### 1. Strategy Pattern
+
+*[To be implemented]*
+
+### 2. Adapter Pattern
+
+*[To be implemented]*
+
+### 3. Observer Pattern
+
+*[To be implemented]*
+
+### 4. Factory Method Pattern
+
+*[To be implemented]*
+
+### 5. Decorator Pattern
+
+*[To be implemented]*
