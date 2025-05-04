@@ -53,26 +53,18 @@ print(circle.perimeter()) # Output: 31.4
 - More flexible approach
 
 ```python
-class Shape:
+# No base class needed for duck typing!
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+    
     def area(self):
-        raise NotImplementedError("Subclass must implement area()")
+        return 3.14 * self.radius ** 2
 
-    def perimeter(self):
-        raise NotImplementedError("Subclass must implement perimeter()")
+def print_area(obj):
+    print(obj.area())  # Works if obj has .area()
 
-class Square(Shape):
-    def __init__(self, side):
-        self.side = side
-
-    def area(self):
-        return self.side ** 2
-
-    def perimeter(self):
-        return 4 * self.side
-
-square = Square(4)
-print(square.area())      # Output: 16
-print(square.perimeter()) # Output: 16
+print_area(Circle(5))  # Output: 78.5
 ```
 
 ## Comparison Table
@@ -124,21 +116,31 @@ circle = Circle(5)  # TypeError: Can't instantiate Circle without perimeter()
 Allows different classes to be used interchangeably if they implement the same interface.
 
 ```python
-def print_stats(shape: Shape):
-    print(f"Area: {shape.area()}, Perimeter: {shape.perimeter()}")
+class Square:  # Doesn't inherit from Shape
+    def __init__(self, side):
+        self.side = side
+    def area(self):
+        return self.side ** 2
 
-shapes = [Circle(5), Rectangle(4, 3)]
+# Works with ANY object that has .area()!
+shapes = [Circle(5), Square(4)]
 for shape in shapes:
-    print_stats(shape)  # Works for ANY Shape!
+    print(shape.area())  # Output: 78.5, then 16
 ```
 
 ## Best Practices
 
-- Use ABCs when you need strict enforcement and clear contracts
-- Use duck typing when you need more flexibility
-- Consider your project's requirements when choosing between the two approaches
+### When to use ABCs
 
-## Design Patterns
+- Large teams/projects needing strict contracts
+- API design where method signatures must be clear
+
+### When to use duck typing
+
+- Small teams/projects where flexibility is more important
+- When flexibility outweighs the need for strict checks
+
+## Interface-Based Design Patterns
 
 ### 1. Strategy Pattern
 
