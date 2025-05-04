@@ -54,17 +54,31 @@ print(circle.perimeter()) # Output: 31.4
 
 ```python
 # No base class needed for duck typing!
-class Circle:
+class Circle:  # No inheritance
     def __init__(self, radius):
         self.radius = radius
     
     def area(self):
         return 3.14 * self.radius ** 2
+    
+    def perimeter(self):
+        return 2 * 3.14 * self.radius
 
-def print_area(obj):
-    print(obj.area())  # Works if obj has .area()
+class Rectangle:  # No inheritance
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+    
+    def area(self):
+        return self.width * self.height
+    
+    def perimeter(self):
+        return 2 * (self.width + self.height)
 
-print_area(Circle(5))  # Output: 78.5
+# Still works with duck typing!
+shapes = [Circle(5), Rectangle(4, 3)]
+for shape in shapes:
+    print(f"Area: {shape.area()}, Perimeter: {shape.perimeter()}")
 ```
 
 ## Comparison Table
@@ -74,6 +88,21 @@ print_area(Circle(5))  # Output: 78.5
 | Enforcement | Strict (compile-time) | Loose (runtime) |
 | Error Handling | TypeError on instantiation | NotImplementedError at runtime |
 | Flexibility | Less flexible | More flexible |
+
+## Key Differences
+
+### Without Interface
+
+- Works through duck typing ("if it has the methods, it works")
+- No enforcement - might fail at runtime if methods are missing
+- Less clear contract between classes
+
+### With Interface (ABC)
+
+- Explicit contract that subclasses must implement certain methods
+- Fails fast (at class definition/instantiation time)
+- Better documentation of expected behavior
+- Enables type checking and IDE support
 
 ## Key Purposes
 
@@ -101,6 +130,7 @@ from abc import ABC, abstractmethod
 class Shape(ABC):
     @abstractmethod
     def area(self): pass
+    
     @abstractmethod
     def perimeter(self): pass
 
@@ -119,6 +149,7 @@ Allows different classes to be used interchangeably if they implement the same i
 class Square:  # Doesn't inherit from Shape
     def __init__(self, side):
         self.side = side
+    
     def area(self):
         return self.side ** 2
 
